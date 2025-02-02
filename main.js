@@ -1,15 +1,16 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const sql = require('mssql');
+require("dotenv").config();
 
 let mainWindow;
 let dashboardWindow; // Ventana del dashboard
 
 const config = {
-    user: 'sa',
-    password: 'Inei0101$',
-    server: 'localhost', // Puede ser 'localhost' o una IP
-    database: 'ElectronJS',
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    server: process.env.DB_HOST, // Puede ser 'localhost' o una IP
+    database: process.env.DB_NAME,
     options: {
         encrypt: true, // Si usas Azure
         trustServerCertificate: true, // Si usas un certificado autofirmado
