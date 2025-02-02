@@ -28,7 +28,7 @@ async function connectToDatabase() {
 ipcMain.handle('login', async (event, username, password) => {
     try {
         const request = new sql.Request();
-        const query = `SELECT * FROM Users WHERE username = '${username}' AND password = '${password}'`;
+        const query = `SELECT * FROM Users WHERE username = '${username}' AND password = CONVERT(NVARCHAR(32),HashBytes('MD5', '${password}'),2)`;
         const result = await request.query(query);
 
         if (result.recordset.length > 0) {
