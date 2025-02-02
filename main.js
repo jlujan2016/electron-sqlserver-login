@@ -2,6 +2,15 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const sql = require('mssql');
 require("dotenv").config();
+const dotenv = require('dotenv');
+
+// Determinar el entorno
+const envPath = app.isPackaged 
+  ? path.join(__dirname, '.env.production') 
+  : path.join(__dirname, '.env.development');
+
+// Cargar las variables de entorno
+dotenv.config({ path: envPath });
 
 let mainWindow;
 let dashboardWindow; // Ventana del dashboard

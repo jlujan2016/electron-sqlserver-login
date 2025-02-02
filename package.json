@@ -4,12 +4,47 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.ejemplo.miaplicacion",
+    "productName": "app login",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      ".env.production",
+      "dashboard.html",
+      "index.html",
+      "preload.js",
+      "renderer.js",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
   },
   "keywords": [],
   "author": "Jose Lujan",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "mssql": "^11.0.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8",
     "dotenv": "^16.4.7",
     "electron": "^34.0.2",
     "mssql": "^11.0.1"
