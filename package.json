@@ -1,0 +1,16 @@
+{
+  "name": "electron-sqlserver-login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^34.0.2",
+    "mssql": "^11.0.1"
+  }
+}
