@@ -1,7 +1,7 @@
 {
   "name": "electron-sqlserver-login",
   "version": "1.0.0",
-  "description": "",
+  "description": "aplicativo base de logeo",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
