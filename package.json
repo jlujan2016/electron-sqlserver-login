@@ -21,7 +21,8 @@
       "index.html",
       "preload.js",
       "renderer.js",
-      "assets/**/*"
+      "assets/**/*",
+      "styles.css"
     ],
     "win": {
       "target": "nsis",
