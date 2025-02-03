@@ -9,7 +9,7 @@
   },
   "build": {
     "appId": "com.ejemplo.miaplicacion",
-    "productName": "app login",
+    "productName": "applogin",
     "directories": {
       "output": "dist"
     },
@@ -33,12 +33,16 @@
       "icon": "assets/icon.icns"
     },
     "linux": {
-      "target": "AppImage",
-      "icon": "assets/icon.png"
+      "target": ["deb","AppImage"],
+      "icon": "assets/icon.png",
+      "category": "Development"
     }
   },
   "keywords": [],
-  "author": "Jose Lujan",
+  "author": {
+    "name": "Jose Lujan",
+    "email": "lujan_exogenesis@hotmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.7",
